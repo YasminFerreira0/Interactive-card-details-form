@@ -2,40 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+  <main class="container">
+    <section class="container__background">
+      <div class="card">
+        <img src="images/card-logo.svg" alt="logo" class="card__logo">
+        <p class="card__numero">0000 0000 0000 0000</p>
+        <div class="card__details">
+          <p class="card__details-nome">Jane Appleseed</p>
+          <p class="card__details-data"><span class="card__month">00</span>/<span class="card__year">00</span></p>
+        </div>
+      </div>
+      <div class="card-back">
+        <p class="card-back__cvc">000</p>
+      </div>
+    </section>
+    <section class="container__formulario">
 
-  000
+      <form class="form" action="">
+        <label for="cardholder">Cardholder Name</label>
+        <input class="form__input" type="text" name="cardholder" id="cardholder" placeholder="e.g. Jane Appleseed">
 
-  Cardholder Name
-  e.g. Jane Appleseed
+        <label for="cardnumber">Card Number</label>
+        <input class="form__input" type="text" name="cardnumber" maxlength="19" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000">
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+        <div class="form__date-cvc"><!--grid-->
+          <!-- 1 -->
+          <label for="carddate">Exp. Date (MM/YY)</label>
+          <!-- 2 -->
+          <label for="cardcvc">CVC</label>
+          <!-- 3 -->
+          <div>
+            <input class="form__input" type="text" name="cardmonth" maxlength="2" placeholder="MM">
+            <input class="form__input" type="text" name="cardyear" maxlength="2" placeholder="YY">
+          </div>
+          <!-- 4 -->
+          <input type="text" class="form__input" maxlength="3" name="cardcvc" placeholder="e.g. 123">
+        </div>
+        
+        <input class="form__btn" type="button" value="Confirm">
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+      </form>
+    </section>
+  </main>
 
-  CVC
-  e.g. 123
 
-  Confirm
 
   <!-- Completed state start -->
 
@@ -43,9 +61,5 @@
   We've added your card details
   Continue
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
